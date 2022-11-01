@@ -2,3 +2,8 @@ extends layout
 
 block content
   h1= title
+  - var results = [{"carModel": "GLC-Class", "carPrice": 54700, "carColor": "Black"}, {"carModel": "EQS-Class", "carPrice": 104400, "carColor": "White"}, {"carModel": "EQB-Class", "carPrice": 52400, "carColor": "Red"}]
+    div(class = 'container-fluid')
+      div(class = 'row')
+        each item,index in results 
+          div(class="col-sm-2") CarModel : #{item["carModel"]} <br> CarPrice : #{item["carPrice"]} <br> CarColor: #{item["carColor"]}
